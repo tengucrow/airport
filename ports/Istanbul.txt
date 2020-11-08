@@ -1,0 +1,5 @@
+name: Istanbul
+code: IST
+polosa: 100
+capacity: 10
+coordinates: 39.9075, 116.39723

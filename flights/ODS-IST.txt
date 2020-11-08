@@ -1,0 +1,5 @@
+flight_number: ODSIST
+departure_airport: Odessa 
+arrival_airport: Istanbul
+plane_name: B737
+flight_dist: 2

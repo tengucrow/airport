@@ -1,0 +1,6 @@
+name: Kiev
+code: KBP
+polosa: 100
+capacity: 10
+coordinates: 50.45466, 30.5238
+

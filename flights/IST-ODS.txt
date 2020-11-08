@@ -1,0 +1,5 @@
+flight_number: ISTODS
+departure_airport: Istanbul
+arrival_airport: Odessa
+plane_name: B737
+flight_dist: 2

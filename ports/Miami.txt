@@ -1,0 +1,5 @@
+name: Miami
+code: MIA
+polosa: 200
+capacity: 100
+coordinates: 25.795911, -80.287062

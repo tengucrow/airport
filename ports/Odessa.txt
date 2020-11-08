@@ -1,0 +1,5 @@
+name: Odessa
+code: ODS
+polosa: 100
+capacity: 10
+coordinates: 46.4775, 30.7326

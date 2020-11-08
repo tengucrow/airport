@@ -1,0 +1,5 @@
+name: AN-2
+width: 40
+dist: 2
+speed: 500
+place: Odessa

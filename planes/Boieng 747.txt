@@ -1,0 +1,5 @@
+name: Boieng 747
+width: 100
+dist: 10000
+speed: 700
+place: Istanbul

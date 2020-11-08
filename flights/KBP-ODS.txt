@@ -1,0 +1,5 @@
+flight_number: KBPODS
+departure_airport: Kiev
+arrival_airport: Odessa
+plane_name: B737
+flight_dist: 1

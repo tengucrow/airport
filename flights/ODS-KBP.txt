@@ -1,0 +1,5 @@
+flight_number: ODSKBP
+departure_airport: Odessa 
+arrival_airport: Kiev
+plane_name: B737
+flight_dist: 1

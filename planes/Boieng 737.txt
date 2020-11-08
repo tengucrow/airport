@@ -1,0 +1,5 @@
+name: Boieng 737
+width: 70
+dist: 5000
+speed: 100
+place: Kiev
