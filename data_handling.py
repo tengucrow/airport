@@ -17,24 +17,28 @@ def calc_dist_fixed(city_a, city_b): # Координати в десятков�
     return acos(cos_x) * EARTH_RADIUS_IN_MILES / 0.62137 #km = mi/0.62137
 
 # чтение данных про аэропорты
-def read_port(folder = 'ports'):
+def read_all_ports(folder = 'ports'):
     port = []
     port_files = os.listdir(folder)#открываем папку с файлами аэропортов
     for one_port in port_files: #читаем по одному файлу в папке и загоняем данные с файлов в список self.port = []
-        f = open(os.path.join(folder, one_port), 'r')
-        t = f.readlines()
-        f.close()
-        port_dict = {} #словарь данных одного аэропорта
-        for i in t:#читаем файл построчно и передаем данные в словарь. 
-                   #В каждой строке файла только два элемента: ключ и значение. Напр. (name: Борисполь), (code: UKBB) ....
-            if ':' in i:
-                s = i.split(':')
-                port_dict[s[0]] = s[1].strip()
-        #двойные скобки - список в списке. Список аэропортов, каждый аэропорт - вложенный список ((..,..,..), (..,..,..))
-        port.append((port_dict['name'], port_dict['code'], int(port_dict['polosa']), int(port_dict['capacity']), port_dict['coordinates']))
-
+        file_name = os.path.join(folder, one_port)
+        port.append(read_port(file_name))
     return port
-
+        
+# чтение данных про отдельный аэропорт
+def read_port(file_name):
+    f = open(file_name, 'r')
+    t = f.readlines()
+    f.close()
+    
+    port_dict = {} #словарь данных одного аэропорта
+    for i in t:#читаем файл построчно и передаем данные в словарь. 
+               #В каждой строке файла только два элемента: ключ и значение. Напр. (name: Борисполь), (code: UKBB) ....
+        if ':' in i:
+            s = i.split(':')
+            port_dict[s[0]] = s[1].strip()
+    #двойные скобки - список в списке. Список аэропортов, каждый аэропорт - вложенный список ((..,..,..), (..,..,..))
+    return port_dict['name'], port_dict['code'], int(port_dict['polosa']), int(port_dict['capacity']), port_dict['coordinates']
 
 # запись в файл нового аэропорта
 def add_port(airport_name, code, lane_width, planes_capacity, coordinates):
@@ -47,6 +51,11 @@ def add_port(airport_name, code, lane_width, planes_capacity, coordinates):
             'coordinates: ' + coordinates )
     f2.close()
 
+
+def del_airport(name):
+    data_a = data_handling.read_port()
+    n = Airport(data_a[1][0], data_a[1][1], data_a[1][2], data_a[1][3], data_a[1][4]) # Порт № 1
+    n2 = Airport(data_a[2][0], data_a[2][1], data_a[2][2], data_a[2][3], data_a[2][4]) # Порт № 2
 
 
 # удаление файла

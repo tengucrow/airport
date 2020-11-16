@@ -37,7 +37,7 @@ class Airport:
             self.lane_width) + ', вместимость: ' + str(self.planes_capacity) + ', координаты: ' + self.coordinates
 
     def see_all_airports(self):  # посмотреть все аэропорты
-        k = data_handling.read_port()
+        k = data_handling.read_all_ports()
         for i in k:
             j = list(i)
             self.all_airports.append(j[0])
@@ -262,7 +262,8 @@ Commander = Commander() #Создание объекта диспетчера
 
 MIA = data_handling.add_port("Miami", "MIA", "200", "100", "25.795911, -80.287062")
 
-data_a = data_handling.read_port()
+data_a = data_handling.read_all_ports()
+print(data_a)
 IST = Airport(data_a[0][0], data_a[0][1], data_a[0][2], data_a[0][3], data_a[0][4])  # Стамбул
 KBP = Airport(data_a[1][0], data_a[1][1], data_a[1][2], data_a[1][3], data_a[1][4])  # Киев
 MIA = Airport(data_a[2][0], data_a[2][1], data_a[2][2], data_a[2][3], data_a[2][4])  # Маями
@@ -271,6 +272,7 @@ ODS = Airport(data_a[3][0], data_a[3][1], data_a[3][2], data_a[3][3], data_a[3][
 # B747 = data_handling.add_plane("Boieng 747", "100", "10000", "700", "Istanbul")
 
 data_p = data_handling.read_planes()
+
 AN_2 = Plane(data_p[0][0], data_p[0][1], data_p[0][2], data_p[0][3], data_p[0][4])  # AN-2
 B737 = Plane(data_p[1][0], data_p[1][1], data_p[1][2], data_p[1][3], data_p[1][4])  # BOIENG 737
 B747 = Plane(data_p[2][0], data_p[2][1], data_p[2][2], data_p[2][3], data_p[2][4])  # BOIENG 747
