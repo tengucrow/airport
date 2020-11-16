@@ -47,6 +47,8 @@ def add_port(airport_name, code, lane_width, planes_capacity, coordinates):
             'coordinates: ' + coordinates )
     f2.close()
 
+
+
 # удаление файла
 def del_file(folder, name):
     os.listdir(folder)#открываем папку с файлами 
